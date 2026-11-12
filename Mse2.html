@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Wedding Planner</title>
+    <link rel="stylesheet" href="mse2.css">
+    <script src="mse2.js" defer></script>
+</head>
+
+<body>
+
+<!-- TOP HEADER -->
+<header class="top">
+    <h1>♡ Royal Wedding</h1>
+    <p>Make Your Dream Wedding Come True</p>
+</header>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#services">SERVICES</a>
+    <a href="#packages">PACKAGES</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#booking">BOOK NOW</a>
+    <a href="#contact">CONTACT</a>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+        <h2>Find Your Perfect Wedding Planner</h2>
+        <p>We make your special day beautiful and unforgettable.</p>
+
+        <form class="search-form" onsubmit="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'});">
+
+            <label>Select Event</label>
+            <select required>
+                <option value="">Choose Event</option>
+                <option>Wedding</option>
+                <option>Engagement</option>
+                <option>Birthday</option>
+            </select>
+
+            <label>Select Location</label>
+            <select required>
+                <option value="">Choose Location</option>
+                <option>Kanpur</option>
+                <option>Lucknow</option>
+                <option>Delhi</option>
+            </select>
+
+            <button type="submit">EXPLORE SERVICES</button>
+        </form>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>Welcome to Royal Wedding Planner</h2>
+    <p>We create beautiful memories through amazing
+       wedding planning, decoration and event management.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Services We're Offering</h2>
+    <p>Our best services for your special day</p>
+
+    <div class="services">
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="Wedding planning">
+            <h3>Pre Wedding</h3>
+            <p>Beautiful pre-wedding arrangements.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500" alt="Venue booking">
+            <h3>Venue Booking</h3>
+            <p>Choose your dream wedding venue.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500" alt="Catering">
+            <h3>Catering Services</h3>
+            <p>Delicious food for your guests.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=500" alt="Wedding photography">
+            <h3>Photography</h3>
+            <p>Capture your beautiful memories.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner">
+    <div>
+        <h2>Need Help Planning Your Wedding?</h2>
+        <p>We are here to help you make your dream wedding special.</p>
+        <a href="#booking" class="banner-btn">CONTACT US</a>
+    </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+    <h2>Our Wedding Packages</h2>
+
+    <div class="packages">
+
+        <div class="package-card">
+            <h3>Basic Package</h3>
+            <h2>₹20,000</h2>
+            <p>Basic Decoration</p>
+            <p>Venue Assistance</p>
+        </div>
+
+        <div class="package-card">
+            <h3>Premium Package</h3>
+            <h2>₹50,000</h2>
+            <p>Premium Decoration</p>
+            <p>Catering Services</p>
+        </div>
+
+        <div class="package-card">
+            <h3>Luxury Package</h3>
+            <h2>₹1,00,000</h2>
+            <p>Luxury Decoration</p>
+            <p>Complete Wedding Planning</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Our Gallery</h2>
+
+    <button onclick="filterGallery('all')">All</button>
+    <button onclick="filterGallery('wedding')">Wedding</button>
+    <button onclick="filterGallery('birthday')">Birthday</button>
+    <button onclick="filterGallery('party')">Party</button>
+
+    <div class="gallery">
+        <img class="gallery-item wedding"
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="Wedding">
+
+        <img class="gallery-item birthday"
+        src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500" alt="Birthday">
+
+        <img class="gallery-item party"
+        src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500" alt="Party">
+
+        <img class="gallery-item wedding"
+        src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=500" alt="Wedding couple">
+    </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+    <h2>Upcoming Event Countdown</h2>
+    <input type="datetime-local" id="eventDate">
+    <button onclick="startCountdown()">Set Date</button>
+    <h3 id="timer">Your Countdown</h3>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+    <h2>Wedding Budget Calculator</h2>
+
+    <input type="number" id="guests" placeholder="Number of Guests">
+    <input type="number" id="food" placeholder="Food Cost Per Person">
+    <input type="number" id="venue" placeholder="Venue Cost">
+    <input type="number" id="decoration" placeholder="Decoration Cost">
+
+    <button onclick="calculateBudget()">Calculate Budget</button>
+    <p id="result"></p>
+</section>
+
+<!-- GUEST LIST -->
+<section id="guest">
+    <h2>Manage Your Guest List</h2>
+
+    <input type="text" id="guestName" placeholder="Enter Guest Name">
+    <button onclick="addGuest()">Add Guest</button>
+
+    <ul id="guestList"></ul>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+    <h2>Book Your Wedding Event</h2>
+
+    <form onsubmit="bookEvent(event)">
+
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="tel" id="phone" placeholder="Mobile Number"
+               pattern="[0-9]{10}" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+
+        <select id="eventType" required>
+            <option value="">Select Event</option>
+            <option>Wedding</option>
+            <option>Birthday</option>
+            <option>Engagement</option>
+            <option>Party</option>
+        </select>
+
+        <input type="date" id="bookingDate" required>
+
+        <button type="submit">BOOK NOW</button>
+    </form>
+
+    <p id="bookingMessage"></p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: royalwedding@gmail.com</p>
+    <p>Phone: 9876543210</p>
+    <p>Address: Kanpur, Uttar Pradesh</p>
+</section>
+
+<footer>
+    <h3>Royal Wedding Planner</h3>
+    <p>Making Every Moment Special</p>
+    <p>© 2026 All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
